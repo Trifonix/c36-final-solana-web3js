@@ -245,7 +245,7 @@ export function CreateTokenForm() {
   };
 
   return (
-    <div className="w-full border-t border-slate-200 pt-5">
+    <div className="w-full">
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div className="space-y-1.5">
           <label
