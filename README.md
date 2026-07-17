@@ -54,6 +54,16 @@ pnpm dev
 
 Приложение откроется по адресу [http://localhost:3000](http://localhost:3000). Переменные окружения не требуются.
 
+## Деплой на Vercel
+
+Next.js-приложение лежит в каталоге `frontend/`, поэтому в настройках проекта Vercel нужно указать:
+
+- **Framework Preset:** Next.js
+- **Root Directory:** `frontend`
+- **Install Command / Build Command / Output Directory:** оставить по умолчанию
+
+Без Root Directory = `frontend` деплой либо падает за пару секунд, либо отдаёт `404: NOT_FOUND`.
+
 ## Проверки
 
 ```bash
