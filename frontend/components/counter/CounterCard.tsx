@@ -1,5 +1,6 @@
 "use client";
 
+import { CounterDisplay } from "./CounterDisplay";
 import { CreateTokenForm } from "./CreateTokenForm";
 import { DecrementButton } from "./DecrementButton";
 import { IncrementButton } from "./IncrementButton";
@@ -26,6 +27,7 @@ export function CounterCard() {
         <div className="relative z-10 flex flex-col items-center gap-6">
           <WalletButton />
           <WalletInfo />
+          <CounterDisplay />
           <div className="flex w-full flex-col items-center gap-3">
             <IncrementButton />
             <DecrementButton />

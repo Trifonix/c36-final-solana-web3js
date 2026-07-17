@@ -75,14 +75,14 @@ export function CounterDisplay() {
   }, [connection, counterAddress, program]);
 
   return (
-    <div className="text-center w-full px-5">
-      <p className="text-sm text-muted-foreground mb-2">Current Count:</p>
-      <div className="h-14 flex items-center justify-center">
+    <div className="w-full px-2 text-center">
+      <p className="mb-2 text-sm font-bold text-slate-600">Current Count:</p>
+      <div className="flex h-14 items-center justify-center">
         {isFetchingCounter ? (
-          <div className="h-7 w-7 rounded-full border-3 border-emerald-300/25 border-t-emerald-300 animate-spin" />
+          <div className="h-7 w-7 animate-spin rounded-full border-2 border-emerald-700/25 border-t-emerald-700" />
         ) : (
-          <p className="bg-gradient-to-r from-emerald-300 to-amber-300 bg-clip-text text-4xl font-black text-transparent">
-            {counterValue}
+          <p className="text-4xl font-black text-emerald-800">
+            {counterValue ?? "—"}
           </p>
         )}
       </div>
