@@ -44,9 +44,9 @@ export function DecrementButton() {
       toast.error("Transaction Failed", {
         description: `${err}`,
         style: {
-          border: "1px solid rgba(239, 68, 68, 0.3)",
-          background:
-            "linear-gradient(to right, rgba(40, 27, 27, 0.95), rgba(28, 23, 23, 0.95))",
+          color: "#7f1d1d",
+          border: "1px solid #fca5a5",
+          background: "#fef2f2",
         },
         duration: 5000,
       });
@@ -59,11 +59,11 @@ export function DecrementButton() {
     <Button
       onClick={handleDecrement}
       disabled={isLoading || !connected}
-      className="h-11 w-[85%] border border-amber-400/30 bg-gradient-to-r from-amber-500/15 to-orange-500/10 text-base font-semibold text-amber-200 hover:from-amber-500/25 hover:to-orange-500/20"
+      className="h-11 w-full border-2 border-amber-700 bg-amber-100 text-base font-bold text-amber-950 shadow-sm hover:bg-amber-200"
     >
       {isLoading ? (
         <div className="flex items-center justify-center">
-          <div className="h-5 w-5 rounded-full border-2 border-red-200/50 border-t-red-200 animate-spin mr-2"></div>
+          <div className="mr-2 h-5 w-5 animate-spin rounded-full border-2 border-amber-950/30 border-t-amber-950"></div>
           <span>Processing...</span>
         </div>
       ) : (

@@ -28,25 +28,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-[#061412] text-stone-100 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} bg-slate-50 text-slate-950 antialiased`}
       >
         <SolanaProvider>
           {children}
           <Toaster
             position="bottom-right"
-            theme="dark"
+            theme="light"
             closeButton
             richColors={false}
             toastOptions={{
               style: {
-                background: "#0b1b18",
-                color: "#f5f5f4",
-                border: "1px solid rgba(52, 211, 153, 0.2)",
+                background: "#ffffff",
+                color: "#0f172a",
+                border: "1px solid #cbd5e1",
                 borderRadius: "0.5rem",
                 padding: "0.75rem 1rem",
-                boxShadow: "0 10px 30px -3px rgba(2, 44, 34, 0.55)",
+                boxShadow: "0 10px 30px -3px rgba(15, 23, 42, 0.18)",
               },
               className: "toast-container",
             }}

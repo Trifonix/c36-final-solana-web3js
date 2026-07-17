@@ -1,16 +1,7 @@
 "use client";
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-
 import React from "react";
 import dynamic from "next/dynamic";
-
-import { NETWORK_LABELS, SOLANA_NETWORK } from "@/lib/solana-config";
 
 // Nextjs hydration error fix
 const WalletMultiButton = dynamic(
@@ -23,7 +14,7 @@ const WalletMultiButton = dynamic(
     loading: () => {
       return (
         <div
-          className="flex animate-pulse items-center rounded-md border border-emerald-400/20 bg-[#07110f]"
+          className="flex animate-pulse items-center rounded-md border border-slate-300 bg-slate-100"
           style={{
             width: "173.47px",
             height: "48px",
@@ -32,11 +23,11 @@ const WalletMultiButton = dynamic(
           }}
         >
           <div
-            className="rounded-full bg-emerald-300/30"
+            className="rounded-full bg-emerald-700/30"
             style={{ width: "24px", height: "24px" }}
           ></div>
           <div
-            className="h-4 bg-white/10 rounded-sm"
+            className="h-4 rounded-sm bg-slate-300"
             style={{ width: "100px" }}
           ></div>
         </div>
@@ -46,18 +37,5 @@ const WalletMultiButton = dynamic(
 );
 
 export function WalletButton() {
-  return (
-    <TooltipProvider>
-      <Tooltip>
-        <TooltipTrigger asChild>
-          <div className="inline-block">
-            <WalletMultiButton />
-          </div>
-        </TooltipTrigger>
-        <TooltipContent>
-          <p>{NETWORK_LABELS[SOLANA_NETWORK]} Only</p>
-        </TooltipContent>
-      </Tooltip>
-    </TooltipProvider>
-  );
+  return <WalletMultiButton />;
 }

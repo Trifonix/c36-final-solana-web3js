@@ -166,18 +166,20 @@ export function WalletInfo() {
   return (
     <>
       {connected && balance !== null && <BalanceLightning balance={balance} />}
-      <div className="w-full text-center space-y-1">
-        <p className="text-xs font-semibold uppercase tracking-widest text-emerald-300/80">
+      <div className="w-full space-y-1 text-center">
+        <p className="text-xs font-bold uppercase tracking-widest text-emerald-800">
           Network: {networkName}
         </p>
         {connected ? (
-          <p className="text-sm font-medium text-amber-100">
+          <p className="text-base font-bold text-slate-950">
             {isLoading && balance === null
               ? "Loading balance…"
               : `${balance?.toFixed(4) ?? "—"} SOL`}
           </p>
         ) : (
-          <p className="text-sm text-stone-500">Connect wallet to see balance</p>
+          <p className="text-sm font-medium text-slate-600">
+            Connect wallet to see balance
+          </p>
         )}
       </div>
     </>

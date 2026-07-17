@@ -25,7 +25,7 @@ export function ToastContent({
 
   return (
     <div className="mt-2">
-      <div className="mb-3 overflow-auto rounded border border-emerald-900/50 bg-emerald-950/30 p-1.5 font-mono text-xs">
+      <div className="mb-3 overflow-auto rounded border border-slate-300 bg-slate-100 p-1.5 font-mono text-xs text-slate-950">
         {transactionSignature}
       </div>
       <div className="flex gap-2 w-full">
@@ -34,13 +34,13 @@ export function ToastContent({
           size="sm"
           className={`h-8 px-2 text-xs flex-1 ${
             isContentCopied
-              ? "border-emerald-400/50 bg-emerald-900/30"
-              : "border-emerald-900/50 bg-emerald-950/20 hover:bg-emerald-900/30"
+              ? "border-emerald-700 bg-emerald-100 text-emerald-950"
+              : "border-slate-400 bg-white text-slate-950 hover:bg-slate-100"
           }`}
           onClick={handleContentCopy}
         >
           {isContentCopied ? (
-            <Check className="h-3.5 w-3.5 mr-1.5 text-green-400" />
+            <Check className="mr-1.5 h-3.5 w-3.5 text-emerald-700" />
           ) : (
             <ClipboardCopy className="h-3.5 w-3.5 mr-1.5" />
           )}
@@ -49,7 +49,7 @@ export function ToastContent({
         <Button
           variant="outline"
           size="sm"
-          className="h-8 flex-1 border-amber-800/40 bg-amber-950/20 px-2 text-xs hover:bg-amber-900/25"
+          className="h-8 flex-1 border-amber-700 bg-amber-100 px-2 text-xs text-amber-950 hover:bg-amber-200"
           onClick={(e) => {
             e.stopPropagation();
             window.open(explorerUrl, "_blank");

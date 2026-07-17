@@ -45,9 +45,9 @@ export function IncrementButton() {
       toast.error("Transaction Failed", {
         description: `${err}`,
         style: {
-          border: "1px solid rgba(239, 68, 68, 0.3)",
-          background:
-            "linear-gradient(to right, rgba(40, 27, 27, 0.95), rgba(28, 23, 23, 0.95))",
+          color: "#7f1d1d",
+          border: "1px solid #fca5a5",
+          background: "#fef2f2",
         },
         duration: 5000,
       });
@@ -60,11 +60,11 @@ export function IncrementButton() {
     <Button
       onClick={handleIncrement}
       disabled={isLoading || !connected}
-      className="h-11 w-[85%] bg-gradient-to-r from-emerald-600 to-teal-500 text-base font-semibold text-emerald-950 shadow-lg shadow-emerald-950/30 hover:from-emerald-500 hover:to-teal-400"
+      className="h-11 w-full bg-emerald-700 text-base font-bold text-white shadow-md hover:bg-emerald-800"
     >
       {isLoading ? (
         <div className="flex items-center justify-center">
-          <div className="mr-2 h-5 w-5 animate-spin rounded-full border-2 border-emerald-950/30 border-t-emerald-950"></div>
+          <div className="mr-2 h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white"></div>
           <span>Processing...</span>
         </div>
       ) : (
