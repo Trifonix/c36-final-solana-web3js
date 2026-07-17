@@ -84,8 +84,7 @@ function BalanceSnakes({ balance }: { balance: number }) {
     return segmentCounts.map((segmentCount, index) => {
       const seed = totalTenths * 97 + index * 53;
       const sizeVariation = 58 + seededRandom(seed + 1) * 54;
-      const partialScale =
-        segmentCount < 10 ? 0.55 + segmentCount * 0.035 : 1;
+      const partialScale = segmentCount / 10;
       const style: SnakeStyle = {
         left: `${3 + seededRandom(seed + 2) * 88}%`,
         top: `${4 + seededRandom(seed + 3) * 84}%`,
@@ -183,7 +182,7 @@ export function WalletInfo() {
           Сеть: {networkName}
         </p>
         {connected ? (
-          <p className="text-base font-bold text-slate-950">
+          <p className="text-base font-bold text-emerald-800">
             {isLoading && balance === null
               ? "Загрузка баланса…"
               : `${balance?.toFixed(4) ?? "—"} SOL`}
