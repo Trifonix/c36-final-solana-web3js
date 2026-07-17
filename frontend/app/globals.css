@@ -95,51 +95,55 @@
   }
 }
 
-.balance-lightning-layer {
-  position: absolute;
+.balance-snake-layer {
+  position: fixed;
   inset: 0;
   z-index: 0;
-  overflow: visible;
+  overflow: hidden;
   pointer-events: none;
 }
 
-.balance-lightning {
+.balance-snake {
   position: absolute;
-  display: grid;
-  width: 2.25rem;
-  height: 2.25rem;
-  place-items: center;
-  color: #d97706;
+  display: block;
+  color: #059669;
   filter:
-    drop-shadow(0 1px 1px rgb(120 53 15 / 80%))
-    drop-shadow(0 0 7px rgb(245 158 11 / 55%));
+    drop-shadow(0 2px 2px rgb(6 78 59 / 30%))
+    drop-shadow(0 0 10px rgb(16 185 129 / 24%));
   transform-origin: center;
-  animation:
-    balance-bolt-float var(--bolt-duration) ease-in-out var(--bolt-delay) infinite,
-    balance-bolt-flash 1.65s steps(2, end) var(--bolt-delay) infinite;
+  opacity: 0.72;
+  animation: balance-snake-swim var(--snake-duration) ease-in-out
+    var(--snake-delay) infinite;
 }
 
-.balance-lightning svg {
+.balance-snake svg {
+  display: block;
   width: 100%;
-  height: 100%;
+  overflow: visible;
 }
 
-.bolt-segment {
-  transition: fill 300ms ease;
+.snake-segment {
+  fill: #10b981;
+  stroke: #047857;
+  stroke-width: 1.1;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: snake-segment-wave 1.4s ease-in-out infinite;
 }
 
-.bolt-segment--active {
-  fill: #f59e0b;
+.snake-segment--head {
+  fill: #059669;
 }
 
-.bolt-segment--empty {
-  fill: rgb(100 116 139 / 55%);
+.snake-eye {
+  fill: #052e16;
 }
 
-.bolt-outline {
+.snake-tongue {
   fill: none;
-  stroke: #92400e;
-  stroke-width: 0.8;
+  stroke: #047857;
+  stroke-width: 1.2;
+  stroke-linecap: round;
   stroke-linejoin: round;
 }
 
@@ -194,44 +198,35 @@
   background: #e2e8f0 !important;
 }
 
-@keyframes balance-bolt-float {
+@keyframes balance-snake-swim {
   0%,
   100% {
     transform:
-      translate3d(0, -3px, 0)
-      rotate(var(--bolt-rotation))
+      translate3d(0, 0, 0)
+      rotate(var(--snake-rotation))
       scale(1);
   }
-  45% {
+  50% {
     transform:
-      translate3d(7px, 6px, 0)
-      rotate(calc(var(--bolt-rotation) + 8deg))
-      scale(1.08);
-  }
-  70% {
-    transform:
-      translate3d(-4px, 2px, 0)
-      rotate(calc(var(--bolt-rotation) - 5deg))
-      scale(0.96);
+      translate3d(var(--snake-drift-x), var(--snake-drift-y), 0)
+      rotate(calc(var(--snake-rotation) + 14deg))
+      scale(1.06);
   }
 }
 
-@keyframes balance-bolt-flash {
+@keyframes snake-segment-wave {
   0%,
-  84%,
   100% {
-    opacity: 0.78;
+    transform: translateY(-1px) scale(1);
   }
-  88% {
-    opacity: 0.25;
-  }
-  92% {
-    opacity: 1;
+  50% {
+    transform: translateY(2px) scale(1.08);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .balance-lightning {
+  .balance-snake,
+  .snake-segment {
     animation: none;
   }
 }

@@ -16,7 +16,7 @@ export function CounterCard() {
 
   return (
     <div
-      className={`mx-auto grid w-full items-start gap-6 transition-[max-width] duration-300 ${
+      className={`relative z-10 mx-auto grid w-full items-start gap-6 transition-[max-width] duration-300 ${
         isTokenFormOpen
           ? "max-w-[780px] lg:grid-cols-2"
           : "max-w-[360px] grid-cols-1"
