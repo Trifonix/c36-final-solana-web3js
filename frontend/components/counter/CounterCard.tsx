@@ -1,5 +1,6 @@
 "use client";
 
+import { CreateTokenForm } from "./CreateTokenForm";
 import { DecrementButton } from "./DecrementButton";
 import { IncrementButton } from "./IncrementButton";
 import React from "react";
@@ -16,6 +17,7 @@ export function CounterCard() {
       <div className="relative z-10 flex flex-col items-center gap-6">
         <WalletButton />
         <WalletInfo />
+        <CreateTokenForm />
         <div className="flex w-full flex-col items-center gap-3">
           <IncrementButton />
           <DecrementButton />

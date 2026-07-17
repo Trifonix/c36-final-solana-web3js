@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { formatError } from "@/lib/format-error";
 import { toast } from "sonner";
 import { useProgram } from "./hooks/useProgram";
 import { useTransactionToast } from "./hooks/useTransactionToast";
@@ -42,7 +43,7 @@ export function DecrementButton() {
       setTransactionSignature(txSignature);
     } catch (err) {
       toast.error("Transaction Failed", {
-        description: `${err}`,
+        description: formatError(err),
         style: {
           color: "#7f1d1d",
           border: "1px solid #fca5a5",
