@@ -228,8 +228,8 @@ export function CreateTokenForm() {
       }
 
       setResult({ mint: mint.toBase58(), signature });
-      toast.success("Token-2022 создан и выпущен", {
-        description: `Mint: ${mint.toBase58()}`,
+      toast.success("Токен создан и выпущен", {
+        description: mint.toBase58(),
         duration: 8000,
       });
     } catch (error) {
@@ -252,7 +252,7 @@ export function CreateTokenForm() {
             className="block text-sm font-bold text-slate-800"
             htmlFor="token-name"
           >
-            Token Name
+            Имя токена
           </label>
           <input
             id="token-name"
@@ -261,7 +261,7 @@ export function CreateTokenForm() {
             value={tokenName}
             onChange={(event) => setTokenName(event.target.value)}
             disabled={isLoading}
-            placeholder="My Token"
+            placeholder="Мой токен"
             autoComplete="off"
             className="h-11 w-full rounded-md border-2 border-slate-300 bg-white px-3 text-slate-950 outline-none placeholder:text-slate-500 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-700/20 disabled:opacity-60"
           />
@@ -272,7 +272,7 @@ export function CreateTokenForm() {
             className="block text-sm font-bold text-slate-800"
             htmlFor="token-amount"
           >
-            Amount
+            Количество
           </label>
           <input
             id="token-amount"
@@ -293,7 +293,7 @@ export function CreateTokenForm() {
           disabled={isLoading || !connected}
           className="flex h-11 w-full items-center justify-center rounded-md bg-emerald-700 px-4 text-sm font-bold text-white shadow-md transition-colors hover:bg-emerald-800 disabled:cursor-not-allowed disabled:opacity-50"
         >
-          {isLoading ? "Creating & minting…" : "Create & Mint Token"}
+          {isLoading ? "Создание и выпуск…" : "Создать и выпустить токен"}
         </button>
       </form>
 
@@ -305,7 +305,7 @@ export function CreateTokenForm() {
           rel="noreferrer"
           className="font-bold text-emerald-800 underline underline-offset-2"
         >
-          получить в faucet
+          получить в кране
         </a>
         .
       </p>
@@ -321,7 +321,7 @@ export function CreateTokenForm() {
 
       {result && (
         <div className="mt-3 space-y-2 rounded-md border border-emerald-300 bg-emerald-50 p-3 text-sm text-slate-900">
-          <p className="font-bold text-emerald-900">Token создан</p>
+          <p className="font-bold text-emerald-900">Токен создан</p>
           <p className="break-all font-mono text-xs">{result.mint}</p>
           <div className="flex flex-wrap gap-x-4 gap-y-1">
             <a
@@ -330,7 +330,7 @@ export function CreateTokenForm() {
               rel="noreferrer"
               className="font-bold text-emerald-800 underline"
             >
-              Mint в Explorer
+              Адрес в Explorer
             </a>
             <a
               href={`https://explorer.solana.com/tx/${result.signature}?cluster=devnet`}

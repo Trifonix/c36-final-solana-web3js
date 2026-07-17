@@ -180,17 +180,17 @@ export function WalletInfo() {
       {connected && balance !== null && <BalanceSnakes balance={balance} />}
       <div className="w-full space-y-1 text-center">
         <p className="text-xs font-bold uppercase tracking-widest text-emerald-800">
-          Network: {networkName}
+          Сеть: {networkName}
         </p>
         {connected ? (
           <p className="text-base font-bold text-slate-950">
             {isLoading && balance === null
-              ? "Loading balance…"
+              ? "Загрузка баланса…"
               : `${balance?.toFixed(4) ?? "—"} SOL`}
           </p>
         ) : (
           <p className="text-sm font-medium text-slate-600">
-            Connect wallet to see balance
+            Подключите кошелёк, чтобы увидеть баланс
           </p>
         )}
       </div>

@@ -29,7 +29,7 @@ export function useTransactionToast({
       }
 
       // Create toast with custom component that manages its own state
-      toastIdRef.current = toast.success("Transaction Sent!", {
+      toastIdRef.current = toast.success("Транзакция отправлена!", {
         description: (
           <ToastContent
             transactionSignature={transactionSignature}

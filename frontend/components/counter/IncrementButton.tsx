@@ -43,7 +43,7 @@ export function IncrementButton() {
       setTransactionSignature(txSignature);
     } catch (err) {
       console.error("Error incrementing counter:", err);
-      toast.error("Transaction Failed", {
+      toast.error("Транзакция не удалась", {
         description: formatError(err),
         style: {
           color: "#7f1d1d",
@@ -66,10 +66,10 @@ export function IncrementButton() {
       {isLoading ? (
         <div className="flex items-center justify-center">
           <div className="mr-2 h-5 w-5 animate-spin rounded-full border-2 border-white/40 border-t-white"></div>
-          <span>Processing...</span>
+          <span>Обработка…</span>
         </div>
       ) : (
-        "Increment Counter"
+        "Увеличить счётчик"
       )}
     </Button>
   );

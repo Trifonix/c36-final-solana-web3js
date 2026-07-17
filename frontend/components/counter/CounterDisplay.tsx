@@ -76,7 +76,7 @@ export function CounterDisplay() {
 
   return (
     <div className="w-full px-2 text-center">
-      <p className="mb-2 text-sm font-bold text-slate-600">Current Count:</p>
+      <p className="mb-2 text-sm font-bold text-slate-600">Текущий счётчик:</p>
       <div className="flex h-14 items-center justify-center">
         {isFetchingCounter ? (
           <div className="h-7 w-7 animate-spin rounded-full border-2 border-emerald-700/25 border-t-emerald-700" />

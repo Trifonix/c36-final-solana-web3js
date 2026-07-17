@@ -47,7 +47,7 @@ export function CounterCard() {
         <section className="animate-in fade-in slide-in-from-left-4 w-full rounded-2xl border-2 border-slate-300 bg-white px-7 py-8 shadow-xl shadow-slate-300/50 duration-300">
           <div className="mb-5 flex items-center justify-between gap-4">
             <h2 className="text-lg font-black text-slate-950">
-              Создание Token-2022
+              Создание токена
             </h2>
             <button
               type="button"

@@ -42,7 +42,7 @@ export function DecrementButton() {
 
       setTransactionSignature(txSignature);
     } catch (err) {
-      toast.error("Transaction Failed", {
+      toast.error("Транзакция не удалась", {
         description: formatError(err),
         style: {
           color: "#7f1d1d",
@@ -65,10 +65,10 @@ export function DecrementButton() {
       {isLoading ? (
         <div className="flex items-center justify-center">
           <div className="mr-2 h-5 w-5 animate-spin rounded-full border-2 border-amber-950/30 border-t-amber-950"></div>
-          <span>Processing...</span>
+          <span>Обработка…</span>
         </div>
       ) : (
-        "Decrement Counter"
+        "Уменьшить счётчик"
       )}
     </Button>
   );

@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Solana Counter App",
-  description: "A minimal frontend for Anchor counter program",
+  description: "Учебный интерфейс для Anchor-счётчика на Solana",
 };
 
 export default function RootLayout({
